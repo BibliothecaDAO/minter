@@ -1,7 +1,8 @@
 # Use an official Python runtime as a parent image
 FROM python:3.9
 
-RUN sudo apt-get install libmysqlclient-dev
+# Update the package index and install libmysqlclient-dev
+RUN apt-get update && apt-get install -y libmysqlclient-dev
 
 # Set the working directory to /app
 WORKDIR /app
