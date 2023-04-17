@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # Update the package index and install libmysqlclient-dev
-RUN apt-get update && apt-get install -y libmysqlclient-dev
+RUN apt-get update && apt-get install -y libmariadb-dev-compat libmariadb-dev
 
 # Set the working directory to /app
 WORKDIR /app
