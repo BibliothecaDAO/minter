@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
 
     console.log("query", query)
     try {
-        const res = await fetch(`http://0.0.0.0:8000/user/${query.username}`, {
+        const res = await fetch(process.env.MINTER_API + `user/${query.username}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

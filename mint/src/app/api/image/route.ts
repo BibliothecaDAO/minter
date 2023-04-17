@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
 
   console.log("query", query)
   try {
-    const res = await fetch(`http://0.0.0.0:8000/generate_image/`, {
+    const res = await fetch(process.env.MINTER_API + `generate_image/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

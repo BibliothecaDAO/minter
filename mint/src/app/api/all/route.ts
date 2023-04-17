@@ -4,7 +4,7 @@ import { NextResponse, NextRequest } from "next/server";
 export async function POST(request: NextRequest) {
 
     try {
-        const res = await fetch(`http://0.0.0.0:8000/images`, {
+        const res = await fetch(process.env.MINTER_API + `images`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
