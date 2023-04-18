@@ -1,20 +1,19 @@
 import { postData } from "../functions";
-import { Image } from "../components/useCreation";
+import { Image as ImageInterface } from "../components/useCreation";
+import Image from "next/image";
+import BlurImage from "./imageloader";
+import { ImageGrid } from "./ImageGrid";
 
-interface Images {
-    images: Image[]
+export interface Images {
+    images: ImageInterface[]
 }
 
 export default async function Page() {
+
     const data: Images = await postData({}, "all");
     return (
         <div className="min-h-screen">
-            <div className="grid grid-cols-8 pt-14">
-                {data.images.map((a, index) =>
-                    <div key={index}><img src={a.url} alt="" /></div>
-                )}
-            </div>
+            <ImageGrid images={data.images} />
         </div>
-
     )
 }
