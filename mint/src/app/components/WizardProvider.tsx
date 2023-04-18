@@ -13,6 +13,7 @@ interface WizardContextType {
     setStep: (step: number) => void;
     nextStep: () => void;
     prevStep: () => void;
+    fullPrompt: () => string;
 }
 
 

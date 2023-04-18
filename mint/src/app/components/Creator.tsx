@@ -26,19 +26,21 @@ export const Creator = () => {
             </div> */}
 
 
-            <div className="flex justify-center w-full mx-auto mt-4">
+            <div className="flex justify-center w-full mx-auto">
 
                 <div className="flex flex-col">
+
+                    <h2>{objects[currentIndex][0].id}</h2>
+                    <CardGroup onClick={objects.length === currentIndex + 1 ? nextStep : handleNext} items={objects[currentIndex]} />
+
+
                     <Button
 
                         onClick={handlePrev}
                         disabled={currentIndex === 0}
                     >
-                        Previous
+                        Previous {currentIndex + 1} / {objects.length}
                     </Button>
-                    <h2>{objects[currentIndex][0].id}</h2>
-                    <CardGroup onClick={objects.length === currentIndex + 1 ? nextStep : handleNext} items={objects[currentIndex]} />
-                    {currentIndex + 1} / {objects.length}
                 </div>
 
                 {/* <Button

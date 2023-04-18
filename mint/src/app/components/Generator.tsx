@@ -8,7 +8,7 @@ import { useAccount } from "@starknet-react/core";
 import { Button } from "./ui/button";
 
 export const Generator = () => {
-    const { creation, selectedImage, setSelectedImage, nextStep } = useWizardContext();
+    const { creation, selectedImage, setSelectedImage, nextStep, fullPrompt } = useWizardContext();
     const [images, setImages] = useState<ImageInterface[]>([]);
     const [loading, setLoading] = useState(false);
     const { address } = useAccount()
@@ -64,7 +64,7 @@ export const Generator = () => {
 
             <div>
                 <h2>Adventurer</h2>
-                <div className="text-3xl">{creation.sex.value} {creation.race.value} {creation.class.value}</div>
+                <div className="text-3xl">{fullPrompt()}</div>
                 <div className="flex justify-start mt-4">
                     <Button onClick={fetchImages}>
                         fetch from the latent realm

@@ -7,6 +7,12 @@ RUN apt-get update && apt-get install -y libmariadb-dev-compat libmariadb-dev
 # Set the working directory to /app
 WORKDIR /app
 
+ARG REPLICATE_API_TOKEN
+ARG AWS_ACCESS
+ARG AWS_SECRET_ACCESS_KEY
+ARG DATABASE_URL
+ARG PINATA_BEARER
+
 # Copy the current directory contents into the container at /app
 COPY . /app
 
@@ -18,4 +24,4 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 ENV NAME World
 
 # Run the command to start the application
-CMD ["uvicorn", "main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "${PORT:-5000}"]

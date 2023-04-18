@@ -6,10 +6,12 @@ export interface WizardContext {
     race: CreationObject,
     sex: CreationObject,
     class: CreationObject,
+    eyes: CreationObject,
+    skin: CreationObject,
 }
 
 export interface CreationObject {
-    id: 'race' | 'sex' | 'class',
+    id: 'race' | 'sex' | 'class' | 'eyes' | 'hair' | 'skin' | 'background' | 'name',
     content: string,
     value: string,
 }
@@ -30,6 +32,8 @@ export const useCreation = () => {
         race: { id: "race", content: "", value: "" },
         sex: { id: "sex", content: "", value: "" },
         class: { id: "class", content: "", value: "" },
+        eyes: { id: "eyes", content: "", value: "" },
+        skin: { id: "skin", content: "", value: "" },
     })
 
     const updateCreation = (update: CreationObject) => {
@@ -50,5 +54,9 @@ export const useCreation = () => {
         setStep(prevStep => prevStep - 1)
     }
 
-    return { creation, setCreation, updateCreation, selectedImage, setSelectedImage, step, setStep, nextStep, prevStep }
+    const fullPrompt = () => {
+        return creation.sex.value + creation.race.value + creation.class.value + creation.eyes.value + creation.skin.value
+    }
+
+    return { creation, setCreation, updateCreation, selectedImage, setSelectedImage, step, setStep, nextStep, prevStep, fullPrompt }
 }

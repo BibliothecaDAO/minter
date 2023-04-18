@@ -73,12 +73,15 @@ class GenerateImageInput(BaseModel):
 # Define Routes
 @app.post('/generate_image/')
 async def generate_image(input_data: GenerateImageInput, db: Session = Depends(get_db)) -> Dict[str, Any]:
+
+    prompt = "4k realism painting, realistic, full-face portrait, " + input_data.image_label + ". lighting background, bright lighting, high quality, perfect, beautiful, saturated"
     # Forward request to the image generation endpoint
     image_generation_response = replicate.run(
         "ai-forever/kandinsky-2:601eea49d49003e6ea75a11527209c4f510a93e2112c969d548fbb45b9c4f19f",
         input={
-            "prompt": input_data.image_label + ". Realist painting, Detailed, realistic, high quality, perfect, beautiful, saturated, perfect hands",
+            "prompt": prompt,
             "batch_size": input_data.quantity,
+            "num_inference_steps": 100,
         }
     )
 
@@ -108,7 +111,7 @@ async def generate_image(input_data: GenerateImageInput, db: Session = Depends(g
             db.commit()
             db.refresh(user)
 
-        image = Image(s3_key=s3_key, image_label=input_data.image_label, user_id=user.id, uuid=unique_uuid)
+        image = Image(s3_key=s3_key, image_label=prompt, user_id=user.id, uuid=unique_uuid)
         db.add(image)
         db.commit()
         db.refresh(image)
