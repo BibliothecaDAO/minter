@@ -6,14 +6,14 @@ interface Images {
 }
 
 export default async function Page() {
-    // const data: Images = await postData({}, "all");
+    const data: Images = await postData({}, "all");
     return (
         <div className="min-h-screen">
-            {/* <div className="grid grid-cols-8 pt-14">
+            <div className="grid grid-cols-8 pt-14">
                 {data.images.map((a, index) =>
                     <div key={index}><img src={a.url} alt="" /></div>
                 )}
-            </div> */}
+            </div>
         </div>
 
     )
