@@ -11,7 +11,7 @@ export interface WizardContext {
 }
 
 export interface CreationObject {
-    id: 'race' | 'sex' | 'class' | 'eyes' | 'hair' | 'skin' | 'background' | 'name',
+    id: 'race' | 'sex' | 'class' | 'eyes' | 'skin',
     content: string,
     value: string,
 }
