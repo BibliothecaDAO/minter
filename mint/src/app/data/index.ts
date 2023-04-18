@@ -4,13 +4,13 @@ export const race: CreationObject[] = [
     {
         id: 'race',
         content: 'Hippo',
-        value: 'muscular hippo,',
+        value: 'hippo person,',
 
     },
     {
         id: 'race',
         content: 'Elephant',
-        value: 'old war elephant,',
+        value: 'elephant person,',
     },
     {
         id: 'race',
@@ -30,17 +30,32 @@ export const race: CreationObject[] = [
     {
         id: 'race',
         content: 'Fox',
-        value: 'cute fox human,',
+        value: 'fox  person,',
     },
     {
         id: 'race',
         content: 'Cat',
-        value: 'cute cat human,',
+        value: 'cat  person,',
     },
     {
         id: 'race',
         content: 'Frog',
-        value: 'frog humanoid,',
+        value: 'frog  person,',
+    },
+    {
+        id: 'race',
+        content: 'Giraffe',
+        value: 'giraffe  person,',
+    },
+    {
+        id: 'race',
+        content: 'Duck',
+        value: 'Duck person,',
+    },
+    {
+        id: 'race',
+        content: 'Ape',
+        value: 'Ape person,',
     },
 ];
 
@@ -124,13 +139,13 @@ export const classes: CreationObject[] = [
     {
         id: 'class',
         content: 'mage',
-        value: 'mage in silk clothing and pointy hat,',
+        value: 'wizard in silk clothing and pointy wizards hat,',
 
     },
     {
         id: 'class',
         content: 'warrior',
-        value: 'warrior with detailed iron armour,',
+        value: 'warrior in a detailed gold helmet and armor,',
 
     },
     {
@@ -142,7 +157,7 @@ export const classes: CreationObject[] = [
     {
         id: 'class',
         content: 'assassin',
-        value: 'assassin in a wood,',
+        value: 'assassin in a hood,',
 
     },
 ];

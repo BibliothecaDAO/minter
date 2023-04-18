@@ -54,8 +54,12 @@ export const useCreation = () => {
         setStep(prevStep => prevStep - 1)
     }
 
+    const isAnimal = () => {
+        return creation.race.value != ("Human" || "Elf" || "Dwarf" || "Orc") ? "" : creation.sex.value
+    }
+
     const fullPrompt = () => {
-        return creation.sex.value + creation.race.value + creation.class.value + creation.eyes.value + creation.skin.value
+        return isAnimal() + creation.race.value + creation.class.value + creation.eyes.value + creation.skin.value
     }
 
     return { creation, setCreation, updateCreation, selectedImage, setSelectedImage, step, setStep, nextStep, prevStep, fullPrompt }

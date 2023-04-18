@@ -18,7 +18,7 @@ export const Generator = () => {
         try {
             const data = await postData(
                 {
-                    image_label: creation.sex.value + " " + creation.race.value + creation.class.value,
+                    image_label: fullPrompt(),
                     "username": address,
                     "quantity": 4
                 },

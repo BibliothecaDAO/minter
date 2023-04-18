@@ -30,25 +30,26 @@ export const Creator = () => {
 
                 <div className="flex flex-col">
 
-                    <h2>{objects[currentIndex][0].id}</h2>
+                    <h4>{objects[currentIndex][0].id}</h4>
                     <CardGroup onClick={objects.length === currentIndex + 1 ? nextStep : handleNext} items={objects[currentIndex]} />
 
 
-                    <Button
+                    <div className="flex justify-between mt-2">
+                        <Button
+                            size={"xs"}
+                            variant={"ghost"}
+                            onClick={handlePrev}
+                            disabled={currentIndex === 0}
+                        >
+                            back
+                        </Button>
+                        <div>
+                            {currentIndex + 1} / {objects.length}
+                        </div>
 
-                        onClick={handlePrev}
-                        disabled={currentIndex === 0}
-                    >
-                        Previous {currentIndex + 1} / {objects.length}
-                    </Button>
+                    </div>
+
                 </div>
-
-                {/* <Button
-                    onClick={objects.length === currentIndex + 1 ? nextStep : handleNext}
-
-                >
-                    {objects.length === currentIndex + 1 ? "Finish" : "Next"}
-                </Button> */}
             </div>
         </div>)
 }
