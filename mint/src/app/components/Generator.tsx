@@ -53,7 +53,7 @@ export const Generator = () => {
                     </div>
                     {images.map((image, index) => {
                         return (
-                            <div className="w-full h-64 ">
+                            <div key={index} className="w-full h-64 ">
                                 {renderImage(index)}
                             </div>
                         )
