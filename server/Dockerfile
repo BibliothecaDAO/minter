@@ -24,4 +24,4 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 ENV NAME World
 
 # Run the command to start the application
-CMD ["uvicorn", "main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "${PORT:-5000}"]
+CMD ["uvicorn", "main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "8000"]
