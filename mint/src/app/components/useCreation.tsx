@@ -56,7 +56,7 @@ export const useCreation = () => {
         setStep(prevStep => prevStep - 1)
     }
 
-    const isAnimal = () => {
+    const isAnimal = (value: string) => {
         return (
             creation.race.value == "aarakocra," ||
             creation.race.value == "tabaxi," ||
@@ -64,11 +64,11 @@ export const useCreation = () => {
             creation.race.value == "lizardfolk,"
         )
             ? ""
-            : creation.sex.value;
+            : value;
     };
 
     const fullPrompt = () => {
-        return creation.age.value + isAnimal() + creation.class.value + creation.race.value + creation.skin.value
+        return isAnimal(creation.age.value) + isAnimal(creation.sex.value) + creation.class.value + creation.race.value + creation.skin.value
     }
 
     return { creation, setCreation, updateCreation, selectedImage, setSelectedImage, step, setStep, nextStep, prevStep, fullPrompt }

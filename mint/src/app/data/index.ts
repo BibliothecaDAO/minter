@@ -175,55 +175,43 @@ export const classes: CreationObject[] = [
     {
         id: 'class',
         content: 'wizard',
-        value: 'wizard,',
+        value: 'wizard with pointy hat,',
 
     },
     {
         id: 'class',
         content: 'warrior',
-        value: 'warrior,',
+        value: 'warrior in armor,',
 
     },
     {
         id: 'class',
         content: 'scout',
-        value: 'scout,',
+        value: 'scout in hood,',
 
     },
     {
         id: 'class',
         content: 'blacksmith',
-        value: 'blacksmith,',
+        value: 'blacksmith in leather,',
 
     },
     {
         id: 'class',
         content: 'assassin',
-        value: 'assassin in a hood,',
-
-    },
-    {
-        id: 'class',
-        content: 'scout',
-        value: 'scout,',
-
-    },
-    {
-        id: 'class',
-        content: 'assassin',
-        value: 'assassin,',
+        value: 'assassin in hood,',
 
     },
     {
         id: 'class',
         content: 'healer',
-        value: 'healer,',
+        value: 'healer with herbs,',
 
     },
     {
         id: 'class',
         content: 'ranger',
-        value: 'ranger,',
+        value: 'ranger with bow,',
 
     },
     {
@@ -235,7 +223,7 @@ export const classes: CreationObject[] = [
     {
         id: 'class',
         content: 'alchemist',
-        value: 'alchemist,',
+        value: 'alchemist in robe,',
 
     },
     {
