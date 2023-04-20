@@ -74,7 +74,7 @@ class GenerateImageInput(BaseModel):
 @app.post('/generate_image/')
 async def generate_image(input_data: GenerateImageInput, db: Session = Depends(get_db)) -> Dict[str, Any]:
 
-    prompt = "8k, muted pastel colors, oil canvas painting, realistic, portrait, " + input_data.image_label + ". lighting background, bright lighting, high quality, perfect, beautiful, saturated"
+    prompt = input_data.image_label
     # Forward request to the image generation endpoint
     image_generation_response = replicate.run(
         "ai-forever/kandinsky-2:601eea49d49003e6ea75a11527209c4f510a93e2112c969d548fbb45b9c4f19f",

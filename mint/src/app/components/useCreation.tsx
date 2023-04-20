@@ -8,10 +8,11 @@ export interface WizardContext {
     class: CreationObject,
     eyes: CreationObject,
     skin: CreationObject,
+    age: CreationObject,
 }
 
 export interface CreationObject {
-    id: 'race' | 'sex' | 'class' | 'eyes' | 'skin',
+    id: 'race' | 'sex' | 'class' | 'eyes' | 'skin' | 'age',
     content: string,
     value: string,
 }
@@ -34,6 +35,7 @@ export const useCreation = () => {
         class: { id: "class", content: "", value: "" },
         eyes: { id: "eyes", content: "", value: "" },
         skin: { id: "skin", content: "", value: "" },
+        age: { id: "age", content: "", value: "" },
     })
 
     const updateCreation = (update: CreationObject) => {
@@ -55,11 +57,11 @@ export const useCreation = () => {
     }
 
     const isAnimal = () => {
-        return creation.race.value != ("Human" || "Elf" || "Dwarf" || "Orc") ? "" : creation.sex.value
+        return creation.race.value == ("aarakocra," || "tabaxi,") ? "" : creation.sex.value
     }
 
     const fullPrompt = () => {
-        return isAnimal() + creation.race.value + creation.class.value + creation.eyes.value + creation.skin.value
+        return creation.age.value + creation.sex.value + creation.class.value + creation.race.value + creation.skin.value
     }
 
     return { creation, setCreation, updateCreation, selectedImage, setSelectedImage, step, setStep, nextStep, prevStep, fullPrompt }

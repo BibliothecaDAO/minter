@@ -1,62 +1,86 @@
 import { CreationObject } from "../components/useCreation";
 
+export const age: CreationObject[] = [
+    {
+        id: 'age',
+        content: 'teenager',
+        value: 'teenager,',
+
+    },
+    {
+        id: 'age',
+        content: 'young adult',
+        value: 'young adult,',
+    },
+    {
+        id: 'age',
+        content: 'adult',
+        value: 'adult,',
+    },
+    {
+        id: 'age',
+        content: 'old',
+        value: 'middle aged,',
+    },
+    {
+        id: 'age',
+        content: 'very old',
+        value: 'elderly,',
+    }
+];
+
 export const race: CreationObject[] = [
     {
         id: 'race',
         content: 'Hippo',
-        value: 'hippo person,',
+        value: 'hippo,',
 
     },
     {
         id: 'race',
-        content: 'Elephant',
-        value: 'elephant person,',
-    },
-    {
-        id: 'race',
         content: 'Human',
-        value: 'beautiful human,',
+        value: 'human,',
     },
     {
         id: 'race',
-        content: 'Orc',
-        value: 'ugly Orc,',
+        content: 'dwarf',
+        value: 'dwarven,',
     },
     {
         id: 'race',
-        content: 'Elf',
-        value: 'mystical elf,',
+        content: 'orc',
+        value: 'orcish,',
     },
     {
         id: 'race',
-        content: 'Fox',
-        value: 'fox  person,',
+        content: 'eagle',
+        value: 'aarakocra,',
     },
     {
         id: 'race',
-        content: 'Cat',
-        value: 'cat  person,',
+        content: 'lizard',
+        value: 'lizardfolk,',
     },
     {
         id: 'race',
-        content: 'Frog',
-        value: 'frog  person,',
+        content: 'druid',
+        value: 'druid firbolg,',
     },
     {
         id: 'race',
-        content: 'Giraffe',
-        value: 'giraffe  person,',
+        content: 'pepe frog',
+        value: 'pepe frog,',
     },
     {
         id: 'race',
-        content: 'Duck',
-        value: 'Duck person,',
+        content: 'tabaxi (cat)',
+        value: 'tabaxi,',
     },
     {
         id: 'race',
-        content: 'Ape',
-        value: 'Ape person,',
-    },
+        content: 'undead',
+        value: 'undead,',
+    }
 ];
 
 export const sexes: CreationObject[] = [
@@ -138,20 +162,26 @@ export const skin: CreationObject[] = [
 export const classes: CreationObject[] = [
     {
         id: 'class',
-        content: 'mage',
-        value: 'wizard in silk clothing and pointy wizards hat,',
+        content: 'wizard',
+        value: 'wizard,',
 
     },
     {
         id: 'class',
         content: 'warrior',
-        value: 'warrior in a detailed gold helmet and armor,',
+        value: 'warrior,',
 
     },
     {
         id: 'class',
-        content: 'noble',
-        value: 'noble with crown,',
+        content: 'scout',
+        value: 'scout,',
+
+    },
+    {
+        id: 'class',
+        content: 'blacksmith',
+        value: 'blacksmith,',
 
     },
     {
@@ -160,6 +190,48 @@ export const classes: CreationObject[] = [
         value: 'assassin in a hood,',
 
     },
+    {
+        id: 'class',
+        content: 'scout',
+        value: 'scout,',
+
+    },
+    {
+        id: 'class',
+        content: 'assassin',
+        value: 'assassin,',
+
+    },
+    {
+        id: 'class',
+        content: 'healer',
+        value: 'healer,',
+
+    },
+    {
+        id: 'class',
+        content: 'ranger',
+        value: 'ranger,',
+
+    },
+    {
+        id: 'class',
+        content: 'monk',
+        value: 'monk,',
+
+    },
+    {
+        id: 'class',
+        content: 'alchemist',
+        value: 'alchemist,',
+
+    },
+    {
+        id: 'class',
+        content: 'bard',
+        value: 'bard,',
+
+    },
 ];
 
-export const objects = [race, sexes, eyes, skin, classes]
+export const objects = [age, race, sexes, eyes, skin, classes]
