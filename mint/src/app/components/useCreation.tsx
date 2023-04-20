@@ -57,11 +57,18 @@ export const useCreation = () => {
     }
 
     const isAnimal = () => {
-        return creation.race.value == ("aarakocra," || "tabaxi,") ? "" : creation.sex.value
-    }
+        return (
+            creation.race.value == "aarakocra," ||
+            creation.race.value == "tabaxi," ||
+            creation.race.value == "pepe frog," ||
+            creation.race.value == "lizardfolk,"
+        )
+            ? ""
+            : creation.sex.value;
+    };
 
     const fullPrompt = () => {
-        return creation.age.value + creation.sex.value + creation.class.value + creation.race.value + creation.skin.value
+        return creation.age.value + isAnimal() + creation.class.value + creation.race.value + creation.skin.value
     }
 
     return { creation, setCreation, updateCreation, selectedImage, setSelectedImage, step, setStep, nextStep, prevStep, fullPrompt }

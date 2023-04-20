@@ -140,6 +140,12 @@ export const skin: CreationObject[] = [
     },
     {
         id: 'skin',
+        content: 'tanned',
+        value: 'tanned skin,',
+
+    },
+    {
+        id: 'skin',
         content: 'black',
         value: 'black skin,',
 
@@ -154,6 +160,12 @@ export const skin: CreationObject[] = [
         id: 'skin',
         content: 'red',
         value: 'red skin,',
+
+    },
+    {
+        id: 'skin',
+        content: 'white',
+        value: 'white skin,',
 
     }
 ];
@@ -234,4 +246,4 @@ export const classes: CreationObject[] = [
     },
 ];
 
-export const objects = [age, race, sexes, eyes, skin, classes]
+export const objects = [age, race, sexes, skin, classes]

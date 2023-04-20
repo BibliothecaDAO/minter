@@ -14,7 +14,7 @@ const Card = (props: CreationObject & { onClick?: (object: CreationObject) => vo
     }
 
     return (
-        <div onClick={() => handleClick()} className={`${creation[props.id].content === props.content ? "bg-black text-white" : ""} flex justify-center p-4 border hover:bg-black hover:text-white border-black rounded cursor-pointer w-72 h-32  align-center`}>
+        <div onClick={() => handleClick()} className={`${creation[props.id].content === props.content ? "bg-stone-700 text-white" : ""} flex justify-center p-4 hover:bg-stone-700 hover:text-white border-white/30 border-4 rounded cursor-pointer w-72 h-32  align-center duration-300 transition-all`}>
             {/* <img src={image} alt={content} /> */}
             <p className='self-center text-2xl'>{props.content}</p>
         </div>

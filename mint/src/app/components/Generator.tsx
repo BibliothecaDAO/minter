@@ -37,29 +37,31 @@ export const Generator = () => {
 
     const renderImage = (index: any) => {
         if (images && images[index]) {
-            return <Image className="cursor-pointer rounded-3xl hover:opacity-50" onClick={() => setSelectedImage(images[index])} width={1000} height={1000} src={images[index].url} alt={`Image ${index + 1}`} />;
+            return <Image className="transition-all duration-300 border-4 border-transparent cursor-pointer rounded-3xl hover:opacity-50 hover:border-white/30" onClick={() => setSelectedImage(images[index])} width={1000} height={1000} src={images[index].url} alt={`Image ${index + 1}`} />;
         } else {
             return <Image className="rounded-3xl" width={1000} height={1000} src="https://replicate.delivery/pbxt/nCtVHvIlJSpVO9f93UbeoKoNsIiiFXnP6Fw9MBUM7uDherkhA/out_0.png" alt="Dummy image" />;
         }
     }
     return (
         <div className="container w-full mx-auto">
-            {loading && <div className="absolute top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50 animate-pulse overflow-scroll-none">Searching the Latent Realm</div>}
+            {!loading && <div className="absolute top-0 left-0 z-50 flex items-center justify-center w-full h-full text-3xl text-center bg-black bg-opacity-50 animate-pulse overflow-scroll-hidden">Please wait, searching <br /> the latent Realm for your Adventurer...</div>}
 
-            {images.length != 0 && (
-                <div className="grid grid-cols-4 gap-4">
-                    <div className={`w-full h-full col-span-2 row-span-2`}>
-                        <Image className="rounded-3xl" width={1000} height={1000} src={selectedImage.url ? selectedImage.url : "https://replicate.delivery/pbxt/nCtVHvIlJSpVO9f93UbeoKoNsIiiFXnP6Fw9MBUM7uDherkhA/out_0.png"} alt={`Selected`} />
+            {
+                images.length != 0 && (
+                    <div className="grid grid-cols-4 gap-4">
+                        <div className={`w-full h-full col-span-2 row-span-2`}>
+                            <Image className="border-4 rounded-3xl border-white/30" width={1000} height={1000} src={selectedImage.url ? selectedImage.url : "https://replicate.delivery/pbxt/nCtVHvIlJSpVO9f93UbeoKoNsIiiFXnP6Fw9MBUM7uDherkhA/out_0.png"} alt={`Selected`} />
+                        </div>
+                        {images.map((image, index) => {
+                            return (
+                                <div key={index} className="w-full h-64 ">
+                                    {renderImage(index)}
+                                </div>
+                            )
+                        })}
                     </div>
-                    {images.map((image, index) => {
-                        return (
-                            <div key={index} className="w-full h-64 ">
-                                {renderImage(index)}
-                            </div>
-                        )
-                    })}
-                </div>
-            )}
+                )
+            }
 
 
             <div>
@@ -73,6 +75,6 @@ export const Generator = () => {
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 }

@@ -11,7 +11,7 @@ interface GroupComponentProps {
 const CardGroup: React.FC<GroupComponentProps> = ({ items, onClick }) => {
 
     return (
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-3">
             {items.map((item, index) => (
                 <Card
                     onClick={onClick}
