@@ -71,7 +71,7 @@ export const useCreation = () => {
     };
 
     const fullPrompt = () => {
-        return isAnimal(creation.age.value) + isAnimal(creation.sex.value) + creation.class.value + creation.race.value + creation.skin.value
+        return isAnimal(creation.age.value) + isAnimal(creation.sex.value) + creation.class.value + creation.race.value + creation.skin.value + creation.expression.value
     }
 
     return { creation, setCreation, updateCreation, selectedImage, setSelectedImage, step, setStep, nextStep, prevStep, fullPrompt }
