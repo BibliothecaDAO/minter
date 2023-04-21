@@ -33,11 +33,11 @@ export const AdventurerWizard = () => {
     }
 
     return (
-        <div className="container mx-auto ">
-            <div className="flex justify-between w-full h-12 mb-10">
+        <div className="container p-8 mx-auto bg-black/40 rounded-3xl">
+            <div className="flex justify-between w-full h-12 mb-20">
                 <Button disabled={step === 0} variant={'ghost'} onClick={prevStep}>back</Button>
                 <div>
-                    <h1>{getStepText(step)}</h1>
+                    <h5>{getStepText(step)}</h5>
                     {/* {fullPrompt()} */}
                 </div>
                 <Button disabled={step === stepText.length - 1} variant={'ghost'} onClick={nextStep}>next</Button>

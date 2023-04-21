@@ -40,21 +40,21 @@ export const Minter = () => {
     const isUploaded = uploadData?.IpfsHash
 
     return (
-        <div className="container flex w-full mx-auto ">
+        <div className="container flex w-full mx-auto">
 
             <div className="w-1/2">
-                <Image className={isUploaded ? "border-green-200 border-4" : ""} width={1000} height={1000} src={selectedImage.url ? selectedImage.url : "https://replicate.delivery/pbxt/nCtVHvIlJSpVO9f93UbeoKoNsIiiFXnP6Fw9MBUM7uDherkhA/out_0.png"} alt={`Selected`} />
+                <Image className={`rounded-3xl border-white/20 border-4 ${isUploaded ? "border-green-200  " : ""}`} width={1000} height={1000} src={selectedImage.url ? selectedImage.url : "https://replicate.delivery/pbxt/nCtVHvIlJSpVO9f93UbeoKoNsIiiFXnP6Fw9MBUM7uDherkhA/out_0.png"} alt={`Selected`} />
             </div>
 
 
 
-            <div className="w-1/2 p-20">
+            <div className="w-1/2 p-20 rounded ">
                 <h2>Your Adventurer</h2>
-                <div>{creation.sex.value} {creation.race.value} {creation.class.value}</div>
-                <div>
+                <div className="text-3xl">{creation.sex.value} {creation.race.value} {creation.class.value}</div>
+                {/* <div>
                     uuid: {selectedImage.uuid}
-                    url: {selectedImage.url}
-                </div>
+
+                </div> */}
                 <div className="flex justify-start mt-4">
                     <Button onClick={setIpfs} >upload to IPFS</Button>
                 </div>

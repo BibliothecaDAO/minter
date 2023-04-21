@@ -61,7 +61,8 @@ export const useCreation = () => {
             creation.race.value == "aarakocra," ||
             creation.race.value == "tabaxi," ||
             creation.race.value == "pepe frog," ||
-            creation.race.value == "lizardfolk,"
+            creation.race.value == "lizardfolk," ||
+            creation.race.value == "hippo,"
         )
             ? ""
             : value;

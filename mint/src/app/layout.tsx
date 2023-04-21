@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inconsolata.variable} ${karla.variable} bg-stone-900 text-stone-200`}>
+      <body className={`${inconsolata.variable} ${karla.variable} bg-stone-900 text-stone-200 bg-background bg-no-repeat bg-cover`}>
         <StarknetConfig autoConnect connectors={connectors}>
           <WizardProvider>
             <NavBar />
