@@ -12,6 +12,8 @@ ARG AWS_ACCESS
 ARG AWS_SECRET_ACCESS_KEY
 ARG DATABASE_URL
 ARG PINATA_BEARER
+ARG DISCORD_BOT_TOKEN
+ARG DISCORD_CHANNEL_ID
 
 # Copy the current directory contents into the container at /app
 COPY . /app
