@@ -322,4 +322,106 @@ export const classes: CreationObject[] = [
     }
 ];
 
-export const objects = [age, race, sexes, skin, classes]
+export const facialExpressions: CreationObject[] = [
+    {
+        id: 'expression',
+        content: 'happy',
+        value: 'happy expression,',
+    },
+    {
+        id: 'expression',
+        content: 'sad',
+        value: 'sad expression,',
+    },
+    {
+        id: 'expression',
+        content: 'angry',
+        value: 'angry expression,',
+    },
+    {
+        id: 'expression',
+        content: 'surprised',
+        value: 'surprised expression,',
+    },
+    {
+        id: 'expression',
+        content: 'confused',
+        value: 'confused expression,',
+    },
+    {
+        id: 'expression',
+        content: 'neutral',
+        value: 'neutral expression,',
+    },
+    {
+        id: 'expression',
+        content: 'disgusted',
+        value: 'disgusted expression,',
+    },
+    {
+        id: 'expression',
+        content: 'fearful',
+        value: 'fearful expression,',
+    },
+    {
+        id: 'expression',
+        content: 'skeptical',
+        value: 'skeptical expression,',
+    },
+    {
+        id: 'expression',
+        content: 'shocked',
+        value: 'shocked expression,',
+    },
+    {
+        id: 'expression',
+        content: 'bored',
+        value: 'bored expression,',
+    },
+    {
+        id: 'expression',
+        content: 'amused',
+        value: 'amused expression,',
+    },
+    {
+        id: 'expression',
+        content: 'proud',
+        value: 'proud expression,',
+    },
+    {
+        id: 'expression',
+        content: 'sleepy',
+        value: 'sleepy expression,',
+    },
+    {
+        id: 'expression',
+        content: 'annoyed',
+        value: 'annoyed expression,',
+    },
+    {
+        id: 'expression',
+        content: 'smirking',
+        value: 'smirking expression,',
+    },
+    {
+        id: 'expression',
+        content: 'exasperated',
+        value: 'exasperated expression,',
+    },
+    {
+        id: 'expression',
+        content: 'flirty',
+        value: 'flirty expression,',
+    },
+    {
+        id: 'expression',
+        content: 'concerned',
+        value: 'concerned expression,',
+    },
+    {
+        id: 'expression',
+        content: 'intrigued',
+        value: 'intrigued expression,',
+    },
+];
+export const objects = [age, race, sexes, skin, classes, facialExpressions]

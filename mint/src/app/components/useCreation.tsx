@@ -9,10 +9,11 @@ export interface WizardContext {
     eyes: CreationObject,
     skin: CreationObject,
     age: CreationObject,
+    expression: CreationObject,
 }
 
 export interface CreationObject {
-    id: 'race' | 'sex' | 'class' | 'eyes' | 'skin' | 'age',
+    id: 'race' | 'sex' | 'class' | 'eyes' | 'skin' | 'age' | 'expression',
     content: string,
     value: string,
 }
@@ -36,6 +37,7 @@ export const useCreation = () => {
         eyes: { id: "eyes", content: "", value: "" },
         skin: { id: "skin", content: "", value: "" },
         age: { id: "age", content: "", value: "" },
+        expression: { id: "expression", content: "", value: "" },
     })
 
     const updateCreation = (update: CreationObject) => {
