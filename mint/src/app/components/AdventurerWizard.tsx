@@ -33,7 +33,7 @@ export const AdventurerWizard = () => {
     }
 
     return (
-        <div className="container p-8 mx-auto bg-black/40 rounded-3xl">
+        <div className="container p-8 mx-auto bg-black/40 rounded-3xl backdrop-blur-sm">
             <div className="flex justify-between w-full h-12 mb-20">
                 <Button disabled={step === 0} variant={'ghost'} onClick={prevStep}>back</Button>
                 <div>

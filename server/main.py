@@ -1,5 +1,8 @@
 from dotenv import load_dotenv
 import os
+import certifi
+
+os.environ['SSL_CERT_FILE'] = certifi.where()
 import uuid
 import requests
 from fastapi import FastAPI, Depends, HTTPException
@@ -12,6 +15,14 @@ from typing import Any, Dict
 import boto3
 from botocore.exceptions import NoCredentialsError
 from tempfile import NamedTemporaryFile
+import asyncio
+import ssl
+from fastapi import BackgroundTasks
+ssl.match_hostname = lambda cert, hostname: True
+import aiohttp
+import io
+import discord
+from discord.ext import commands
 
 load_dotenv()
 
@@ -20,6 +31,10 @@ AWS_ACCESS = os.environ.get("AWS_ACCESS")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 DATABASE_URL = os.environ.get("DATABASE_URL")
 PINATA_BEARER = os.environ.get("PINATA_BEARER")
+
+DISCORD_BOT_TOKEN = os.environ.get("DISCORD_BOT_TOKEN")
+DISCORD_CHANNEL_ID = int(os.environ.get("DISCORD_CHANNEL_ID"))
+COMMAND_PREFIX = "!"
 
 bucket_url = 'https://adventurers.s3.amazonaws.com/'
 
@@ -72,7 +87,7 @@ class GenerateImageInput(BaseModel):
 
 # Define Routes
 @app.post('/generate_image/')
-async def generate_image(input_data: GenerateImageInput, db: Session = Depends(get_db)) -> Dict[str, Any]:
+async def generate_image(background_tasks: BackgroundTasks, input_data: GenerateImageInput, db: Session = Depends(get_db)) -> Dict[str, Any]:
 
     prompt = input_data.image_label
     # Forward request to the image generation endpoint
@@ -122,6 +137,8 @@ async def generate_image(input_data: GenerateImageInput, db: Session = Depends(g
             'url': bucket_url + s3_key,
             'uuid': unique_uuid
         })
+
+        background_tasks.add_task(post_image_to_discord, bucket_url + s3_key, unique_uuid)
 
     return {'success': True, 'images': images_data}
 
@@ -183,7 +200,63 @@ async def upload_image(image: IPFS, db: Session = Depends(get_db)):
         else:
             os.remove(temp_file.name)
             raise HTTPException(status_code=400, detail="Image with specified UUID does not exist")
+        
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix=COMMAND_PREFIX, intents=intents)
+bot_ready = asyncio.Event()
+
+@bot.event
+async def on_ready():
+    print(f'{bot.user} has connected to Discord!')
+    bot_ready.set()
+
+async def post_image_to_discord(image_url: str, unique_uuid: str):
+    await bot_ready.wait()
+
+    channel = bot.get_channel(DISCORD_CHANNEL_ID)
+
+    if channel is None:
+        print(f'Error: Channel not found with ID {DISCORD_CHANNEL_ID}')
+        return
+
+    try:
+        async with channel.typing():
+            async with aiohttp.ClientSession() as session:
+                async with session.get(image_url) as resp:
+                    if resp.status != 200:
+                        return await channel.send('Could not download file...')
+                    data = io.BytesIO(await resp.read())
+                    await channel.send(file=discord.File(data, '{unique_uuid}.png'))
+    except Exception as e:
+        print(f'Error posting image: {e}')
+
+
+
+
+
+import uvicorn
+
+async def start_bot():
+    await bot.start(DISCORD_BOT_TOKEN)
+
+async def start_uvicorn():
+    uvicorn_config = uvicorn.Config(app, host='0.0.0.0', port=8000, lifespan="on")
+    server = uvicorn.Server(config=uvicorn_config)
+    await server.serve()
+
+async def main():
+    try:
+        await asyncio.gather(
+            start_bot(),
+            start_uvicorn()
+        )
+    except asyncio.CancelledError:
+        pass
 
 if __name__ == '__main__':
-    import uvicorn
-    uvicorn.run(app, host='0.0.0.0', port=8000)
+    loop = asyncio.get_event_loop()
+    try:
+        loop.run_until_complete(main())
+    finally:
+        loop.close()

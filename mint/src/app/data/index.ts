@@ -80,6 +80,46 @@ export const race: CreationObject[] = [
         id: 'race',
         content: 'undead',
         value: 'undead,',
+    },
+    {
+        id: 'race',
+        content: 'Centaur',
+        value: 'centaur,',
+    },
+    {
+        id: 'race',
+        content: 'Goblin',
+        value: 'goblin,',
+    },
+    {
+        id: 'race',
+        content: 'Triton',
+        value: 'triton,',
+    },
+    {
+        id: 'race',
+        content: 'Tiefling',
+        value: 'tiefling,',
+    },
+    {
+        id: 'race',
+        content: 'Gnome',
+        value: 'gnome,',
+    },
+    {
+        id: 'race',
+        content: 'Merfolk',
+        value: 'merfolk,',
+    },
+    {
+        id: 'race',
+        content: 'Kobold',
+        value: 'kobold,',
+    },
+    {
+        id: 'race',
+        content: 'Kenku (crow)',
+        value: 'kenku,',
     }
 ];
 

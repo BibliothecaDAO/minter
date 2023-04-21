@@ -44,7 +44,7 @@ export const Generator = () => {
     }
     return (
         <div className="container w-full mx-auto">
-            {loading && <div className="absolute top-0 left-0 z-50 flex items-center justify-center w-full h-full text-3xl text-center bg-black bg-opacity-50 animate-pulse overflow-scroll-hidden">Please wait, searching <br /> the latent Realm for your Adventurer...</div>}
+            {loading && <div className="absolute top-0 left-0 z-50 flex items-center justify-center w-full h-full text-3xl text-center bg-black bg-opacity-50 animate-pulse overflow-scroll-hidden rounded-3xl">Please wait, searching <br /> the latent Realm for your Adventurer...</div>}
 
             {
                 images.length != 0 && (
