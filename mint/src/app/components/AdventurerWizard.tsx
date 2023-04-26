@@ -37,8 +37,8 @@ export const AdventurerWizard = () => {
             <div className="w-96 border-r p-6 bg-black/40 border-white/40">
                 <h5>Adventurer</h5>
                 <div className="flex flex-col space-y-3">
-                    {Object.values(creation).map((item) => (
-                        <Button className="w-full">{item.id}: {item.content}</Button>
+                    {Object.values(creation).map((item, index) => (
+                        <Button key={index} className="w-full">{item.id}: {item.content}</Button>
                     ))}
                 </div>
 
