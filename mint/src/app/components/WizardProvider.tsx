@@ -14,6 +14,7 @@ interface WizardContextType {
     nextStep: () => void;
     prevStep: () => void;
     fullPrompt: () => string;
+    checkAllValuesSet: () => boolean;
 }
 
 

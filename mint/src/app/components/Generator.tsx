@@ -44,8 +44,17 @@ export const Generator = () => {
     }
     return (
         <div className="container w-full mx-auto">
-            {loading && <div className="absolute top-0 left-0 z-50 flex items-center justify-center w-full h-full text-3xl text-center bg-black bg-opacity-50 animate-pulse overflow-scroll-hidden rounded-3xl">Please wait, searching <br /> the latent Realm for your Adventurer...</div>}
-
+            {loading && <div className="absolute top-0 left-0 z-50 flex items-center justify-center w-full h-full text-3xl text-center bg-black bg-opacity-50 animate-pulse overflow-scroll-hidden">Please wait, searching <br /> the latent Realm for your Adventurer...</div>}
+            <div className="mb-8">
+                <h4>Your Adventurer</h4>
+                <div className="text-3xl">{fullPrompt()}</div>
+                <div className="flex justify-start mt-4 space-x-3">
+                    <Button onClick={fetchImages}>
+                        fetch from the latent realm
+                    </Button>
+                    {images.length != 0 && <Button disabled={images.length == 0} onClick={nextStep} >to mint</Button>}
+                </div>
+            </div>
             {
                 images.length != 0 && (
                     <div className="grid grid-cols-4 gap-4">
@@ -62,19 +71,6 @@ export const Generator = () => {
                     </div>
                 )
             }
-
-
-            <div>
-                <h2>Adventurer</h2>
-                <div className="text-3xl">{fullPrompt()}</div>
-                <div className="flex justify-start mt-4">
-                    <Button onClick={fetchImages}>
-                        fetch from the latent realm
-                    </Button>
-                    {images.length != 0 && <Button disabled={images.length == 0} onClick={nextStep} >to mint</Button>}
-                </div>
-            </div>
-
         </div >
     );
 }

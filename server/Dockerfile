@@ -21,9 +21,5 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
-
-# Define environment variable
-ENV NAME World
-
 # Run the command to start the application
 CMD ["python", "main.py"]

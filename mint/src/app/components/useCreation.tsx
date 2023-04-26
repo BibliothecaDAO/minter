@@ -6,14 +6,13 @@ export interface WizardContext {
     race: CreationObject,
     sex: CreationObject,
     class: CreationObject,
-    eyes: CreationObject,
     skin: CreationObject,
     age: CreationObject,
     expression: CreationObject,
 }
 
 export interface CreationObject {
-    id: 'race' | 'sex' | 'class' | 'eyes' | 'skin' | 'age' | 'expression',
+    id: 'race' | 'sex' | 'class' | 'skin' | 'age' | 'expression',
     content: string,
     value: string,
 }
@@ -34,7 +33,6 @@ export const useCreation = () => {
         race: { id: "race", content: "", value: "" },
         sex: { id: "sex", content: "", value: "" },
         class: { id: "class", content: "", value: "" },
-        eyes: { id: "eyes", content: "", value: "" },
         skin: { id: "skin", content: "", value: "" },
         age: { id: "age", content: "", value: "" },
         expression: { id: "expression", content: "", value: "" },
@@ -77,5 +75,18 @@ export const useCreation = () => {
         return isAnimal(creation.age.value) + isAnimal(creation.sex.value) + creation.class.value + creation.race.value + creation.skin.value + creation.expression.value
     }
 
-    return { creation, setCreation, updateCreation, selectedImage, setSelectedImage, step, setStep, nextStep, prevStep, fullPrompt }
+    const isValidKey = (key: string): key is keyof WizardContext => {
+        return ['race', 'sex', 'class', 'skin', 'age', 'expression'].includes(key);
+    };
+
+    const checkAllValuesSet = () => {
+        for (const key in creation) {
+            if (isValidKey(key) && !creation[key].value) {
+                return false;
+            }
+        }
+        return true;
+    };
+
+    return { checkAllValuesSet, creation, setCreation, updateCreation, selectedImage, setSelectedImage, step, setStep, nextStep, prevStep, fullPrompt }
 }

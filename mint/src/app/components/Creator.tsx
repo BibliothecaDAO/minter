@@ -30,7 +30,7 @@ export const Creator = () => {
 
                 <div className="flex flex-col">
 
-                    <h4>{objects[currentIndex][0].id}</h4>
+                    <h4 className="text-center uppercase">Select {objects[currentIndex][0].id}</h4>
                     <CardGroup onClick={objects.length === currentIndex + 1 ? nextStep : handleNext} items={objects[currentIndex]} />
 
 

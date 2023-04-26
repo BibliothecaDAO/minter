@@ -231,10 +231,6 @@ async def post_image_to_discord(image_url: str, unique_uuid: str):
     except Exception as e:
         print(f'Error posting image: {e}')
 
-
-
-
-
 import uvicorn
 
 async def start_bot():

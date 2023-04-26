@@ -2,7 +2,7 @@
 
 import { NavBar } from './components/NavBar'
 import './globals.css'
-import { StarknetConfig, InjectedConnector, useConnectors } from '@starknet-react/core'
+import { StarknetConfig, InjectedConnector } from '@starknet-react/core'
 import { Inconsolata, Karla } from "next/font/google";
 import { WizardProvider } from './components/WizardProvider'
 
@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inconsolata.variable} ${karla.variable} bg-stone-900 text-stone-200 bg-background bg-no-repeat bg-cover`}>
+      <body className={`${inconsolata.variable} ${karla.variable} bg-stone-900 text-stone-200 bg-background bg-no-repeat bg-cover min-h-screen flex flex-col`}>
         <StarknetConfig autoConnect connectors={connectors}>
           <WizardProvider>
             <NavBar />

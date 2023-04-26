@@ -3,33 +3,33 @@ import { CreationObject } from "../components/useCreation";
 export const age: CreationObject[] = [
     {
         id: 'age',
-        content: 'teenager',
+        content: 'novice',
         value: 'teenager,',
 
     },
     {
         id: 'age',
-        content: 'young adult',
+        content: 'journeyman',
         value: 'young adult,',
     },
     {
         id: 'age',
-        content: 'adult',
+        content: 'veteran',
         value: 'adult,',
     },
     {
         id: 'age',
-        content: 'old',
+        content: 'elder',
         value: 'middle aged,',
     },
     {
         id: 'age',
-        content: 'very old',
+        content: 'sage',
         value: 'elderly,',
     }
 ];
 
-export const race: CreationObject[] = [
+export const culture: CreationObject[] = [
     {
         id: 'race',
         content: 'Hippo',
@@ -138,128 +138,100 @@ export const sexes: CreationObject[] = [
     },
     {
         id: 'sex',
-        content: 'n/a',
+        content: 'Unspecified',
         value: '',
 
     }
 ];
-
-export const eyes: CreationObject[] = [
-    {
-        id: 'eyes',
-        content: 'blue',
-        value: 'blue eyes,',
-
-    },
-    {
-        id: 'eyes',
-        content: 'black',
-        value: 'black eyes,',
-
-    },
-    {
-        id: 'eyes',
-        content: 'yellow',
-        value: 'yellow eyes,',
-
-    },
-    {
-        id: 'eyes',
-        content: 'red',
-        value: 'red eyes,',
-
-    }
-];
-
 export const skin: CreationObject[] = [
     {
         id: 'skin',
-        content: 'blue',
+        content: 'Azure',
         value: 'blue skin,',
     },
     {
         id: 'skin',
-        content: 'tanned',
+        content: 'Sun-Kissed',
         value: 'tanned skin,',
     },
     {
         id: 'skin',
-        content: 'black',
+        content: 'Ebony',
         value: 'black skin,',
     },
     {
         id: 'skin',
-        content: 'yellow',
+        content: 'Golden',
         value: 'yellow skin,',
     },
     {
         id: 'skin',
-        content: 'red',
+        content: 'Crimson',
         value: 'red skin,',
     },
     {
         id: 'skin',
-        content: 'white',
+        content: 'Alabaster',
         value: 'white skin,',
     },
     {
         id: 'skin',
-        content: 'green',
+        content: 'Emerald',
         value: 'green skin,',
     },
     {
         id: 'skin',
-        content: 'purple',
+        content: 'Amethyst',
         value: 'purple skin,',
     },
     {
         id: 'skin',
-        content: 'orange',
+        content: 'Amber',
         value: 'orange skin,',
     },
     {
         id: 'skin',
-        content: 'pink',
+        content: 'Rose Quartz',
         value: 'pink skin,',
     },
     {
         id: 'skin',
-        content: 'gray',
+        content: 'Ashen',
         value: 'gray skin,',
     },
     {
         id: 'skin',
-        content: 'cyan',
+        content: 'Cerulean',
         value: 'cyan skin,',
     },
     {
         id: 'skin',
-        content: 'brown',
+        content: 'Umber',
         value: 'brown skin,',
     },
     {
         id: 'skin',
-        content: 'lavender',
+        content: 'Lilac',
         value: 'lavender skin,',
     },
     {
         id: 'skin',
-        content: 'teal',
+        content: 'Seaglass',
         value: 'teal skin,',
     },
     {
         id: 'skin',
-        content: 'olive',
+        content: 'Forest',
         value: 'olive skin,',
     },
     {
         id: 'skin',
-        content: 'maroon',
+        content: 'Burgundy',
         value: 'maroon skin,',
     },
     {
         id: 'skin',
-        content: 'navy',
+        content: 'Midnight',
         value: 'navy skin,',
     }
 ];
@@ -464,4 +436,4 @@ export const facialExpressions: CreationObject[] = [
         value: 'intrigued expression,',
     },
 ];
-export const objects = [age, race, sexes, skin, classes, facialExpressions]
+export const objects = [age, culture, sexes, skin, classes, facialExpressions]
