@@ -92,10 +92,10 @@ async def generate_image(background_tasks: BackgroundTasks, input_data: Generate
     prompt = input_data.image_label
     # Forward request to the image generation endpoint
     image_generation_response = replicate.run(
-        "ai-forever/kandinsky-2:601eea49d49003e6ea75a11527209c4f510a93e2112c969d548fbb45b9c4f19f",
+        "ai-forever/kandinsky-2-1:a768f3c2e174c54b576cc4f222e789e161160403d0cd0ace41eeb9a0f8c8d5f8",
         input={
             "prompt": prompt,
-            "batch_size": input_data.quantity,
+            "num_outputs": input_data.quantity,
             "num_inference_steps": 75,
         }
     )
