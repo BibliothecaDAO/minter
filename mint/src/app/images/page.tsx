@@ -10,10 +10,10 @@ export interface Images {
 
 export default async function Page() {
 
-    const data: Images = await postData({}, "all");
+    // const data: Images = await postData({}, "all");
     return (
         <div className="min-h-screen">
-            <ImageGrid images={data.images} />
+            {/* <ImageGrid images={data.images} /> */}
         </div>
     )
 }
