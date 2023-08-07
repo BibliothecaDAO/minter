@@ -14,11 +14,13 @@ export const Generator = () => {
     const { address } = useAccount()
 
     const fetchImages = async () => {
+
+        console.log(fullPrompt())
         setLoading(true);
         try {
             const data = await postData(
                 {
-                    image_label: "8k, " + fullPrompt() + ", in the style of a realist painting",
+                    image_label: "A portrait of an " + fullPrompt() + ", in the style of a realist painting",
                     "username": address,
                     "quantity": 4
                 },

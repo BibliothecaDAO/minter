@@ -4,122 +4,131 @@ export const age: CreationObject[] = [
     {
         id: 'age',
         content: 'novice',
-        value: 'teenager,',
+        value: 'young ',
 
     },
-    {
-        id: 'age',
-        content: 'journeyman',
-        value: 'young adult,',
-    },
+    // {
+    //     id: 'age',
+    //     content: 'journeyman',
+    //     value: 'young adult ',
+    // },
     {
         id: 'age',
         content: 'veteran',
-        value: 'adult,',
+        value: 'adult ',
     },
-    {
-        id: 'age',
-        content: 'elder',
-        value: 'middle aged,',
-    },
+    // {
+    //     id: 'age',
+    //     content: 'elder',
+    //     value: 'middle aged ',
+    // },
     {
         id: 'age',
         content: 'sage',
-        value: 'elderly,',
+        value: 'elderly ',
     }
 ];
 
 export const culture: CreationObject[] = [
     {
         id: 'race',
-        content: 'Hippo',
-        value: 'hippo,',
-
+        content: 'Elephant',
+        value: 'elephant-headed',
+    },
+    {
+        id: 'race',
+        content: 'Lion',
+        value: 'lion-headed',
+    },
+    {
+        id: 'race',
+        content: 'Lion',
+        value: 'tiger-headed',
     },
     {
         id: 'race',
         content: 'Human',
-        value: 'human,',
+        value: 'human',
     },
     {
         id: 'race',
         content: 'dwarf',
-        value: 'dwarven,',
+        value: 'dwarven',
     },
     {
         id: 'race',
         content: 'orc',
-        value: 'orcish,',
+        value: 'orcish',
     },
     {
         id: 'race',
         content: 'eagle',
-        value: 'aarakocra,',
+        value: 'aarakocra-headed',
     },
     {
         id: 'race',
         content: 'lizard',
-        value: 'lizardfolk,',
+        value: 'lizardfolk-headed',
     },
     {
         id: 'race',
         content: 'druid',
-        value: 'druid firbolg,',
+        value: 'druid firbolg',
     },
     {
         id: 'race',
         content: 'pepe frog',
-        value: 'pepe frog,',
+        value: 'pepe frog-headed',
     },
     {
         id: 'race',
         content: 'tabaxi (cat)',
-        value: 'tabaxi,',
+        value: 'tabaxi',
     },
     {
         id: 'race',
         content: 'undead',
-        value: 'undead,',
+        value: 'undead',
     },
     {
         id: 'race',
         content: 'Centaur',
-        value: 'centaur,',
+        value: 'centaur',
     },
     {
         id: 'race',
         content: 'Goblin',
-        value: 'goblin,',
+        value: 'goblin',
     },
     {
         id: 'race',
         content: 'Triton',
-        value: 'triton,',
+        value: 'triton',
     },
     {
         id: 'race',
         content: 'Tiefling',
-        value: 'tiefling,',
+        value: 'tiefling',
     },
     {
         id: 'race',
         content: 'Gnome',
-        value: 'gnome,',
+        value: 'gnome',
     },
     {
         id: 'race',
         content: 'Merfolk',
-        value: 'merfolk,',
+        value: 'merfolk',
     },
     {
         id: 'race',
         content: 'Kobold',
-        value: 'kobold,',
+        value: 'kobold',
     },
     {
         id: 'race',
         content: 'Kenku (crow)',
-        value: 'kenku,',
+        value: 'kenku-headed',
     }
 ];
 
@@ -127,13 +136,13 @@ export const sexes: CreationObject[] = [
     {
         id: 'sex',
         content: 'male',
-        value: 'male,',
+        value: 'male',
 
     },
     {
         id: 'sex',
         content: 'female',
-        value: 'female,',
+        value: 'female',
 
     },
     {
@@ -143,6 +152,63 @@ export const sexes: CreationObject[] = [
 
     }
 ];
+
+export const color: CreationObject[] = [
+    {
+        id: 'color',
+        content: 'black',
+        value: 'black',
+    },
+    {
+        id: 'color',
+        content: 'white',
+        value: 'white',
+    },
+    {
+        id: 'color',
+        content: 'blue',
+        value: 'blue',
+    },
+    {
+        id: 'color',
+        content: 'red',
+        value: 'red',
+    },
+    {
+        id: 'color',
+        content: 'yellow',
+        value: 'yellow',
+    }
+];
+
+export const clothing: CreationObject[] = [
+    {
+        id: 'clothing',
+        content: 'linen',
+        value: 'linen robes',
+    },
+    {
+        id: 'clothing',
+        content: 'deatiled armour',
+        value: 'detailed armour',
+    },
+    {
+        id: 'clothing',
+        content: 'silk robes',
+        value: 'silk robes',
+    },
+    {
+        id: 'clothing',
+        content: 'leather armour',
+        value: 'leather armour',
+    },
+    {
+        id: 'clothing',
+        content: 'leather robes',
+        value: 'leather robes',
+    }
+];
+
 export const skin: CreationObject[] = [
     {
         id: 'skin',
@@ -240,38 +306,38 @@ export const classes: CreationObject[] = [
     {
         id: 'class',
         content: 'wizard',
-        value: 'wizard with pointy hat,',
+        value: 'wizard,',
     },
     {
         id: 'class',
         content: 'warrior',
-        value: 'warrior in armor,',
+        value: 'warrior,',
     },
     {
         id: 'class',
         content: 'scout',
         value: 'scout in hood,',
     },
-    {
-        id: 'class',
-        content: 'blacksmith',
-        value: 'blacksmith,',
-    },
+    // {
+    //     id: 'class',
+    //     content: 'blacksmith',
+    //     value: 'blacksmith,',
+    // },
     {
         id: 'class',
         content: 'assassin',
         value: 'assassin in hood,',
     },
-    {
-        id: 'class',
-        content: 'healer',
-        value: 'healer with herbs,',
-    },
-    {
-        id: 'class',
-        content: 'ranger',
-        value: 'ranger,',
-    },
+    // {
+    //     id: 'class',
+    //     content: 'healer',
+    //     value: 'healer with herbs,',
+    // },
+    // {
+    //     id: 'class',
+    //     content: 'ranger',
+    //     value: 'ranger,',
+    // },
     {
         id: 'class',
         content: 'monk',
@@ -282,30 +348,30 @@ export const classes: CreationObject[] = [
         content: 'alchemist',
         value: 'alchemist,',
     },
-    {
-        id: 'class',
-        content: 'bard',
-        value: 'bard,',
-    },
-    {
-        id: 'class',
-        content: 'sorcerer',
-        value: 'sorcerer,',
-    },
+    // {
+    //     id: 'class',
+    //     content: 'bard',
+    //     value: 'bard,',
+    // },
+    // {
+    //     id: 'class',
+    //     content: 'sorcerer',
+    //     value: 'sorcerer,',
+    // },
     {
         id: 'class',
         content: 'paladin',
-        value: 'paladin in holy armor,',
+        value: 'paladin,',
     },
     {
         id: 'class',
         content: 'druid',
-        value: 'druid in nature robes,',
+        value: 'druid,',
     },
     {
         id: 'class',
         content: 'necromancer',
-        value: 'necromancer in dark robes,',
+        value: 'necromancer,',
     },
     {
         id: 'class',
@@ -436,4 +502,4 @@ export const facialExpressions: CreationObject[] = [
         value: 'intrigued expression,',
     },
 ];
-export const objects = [age, culture, sexes, skin, classes, facialExpressions]
+export const objects = [age, culture, sexes, skin, classes, color, clothing]

@@ -9,10 +9,12 @@ export interface WizardContext {
     skin: CreationObject,
     age: CreationObject,
     expression: CreationObject,
+    color: CreationObject,
+    clothing: CreationObject,
 }
 
 export interface CreationObject {
-    id: 'race' | 'sex' | 'class' | 'skin' | 'age' | 'expression',
+    id: 'race' | 'sex' | 'class' | 'skin' | 'age' | 'expression' | 'clothing' | 'color',
     content: string,
     value: string,
 }
@@ -36,6 +38,8 @@ export const useCreation = () => {
         skin: { id: "skin", content: "", value: "" },
         age: { id: "age", content: "", value: "" },
         expression: { id: "expression", content: "", value: "" },
+        color: { id: "color", content: "", value: "" },
+        clothing: { id: "clothing", content: "", value: "" },
     })
 
     const updateCreation = (update: CreationObject) => {
@@ -72,7 +76,7 @@ export const useCreation = () => {
     };
 
     const fullPrompt = () => {
-        return isAnimal(creation.age.value) + isAnimal(creation.sex.value) + creation.class.value + creation.race.value + creation.skin.value + creation.expression.value
+        return creation.age.value + " " + creation.sex.value + " " + creation.race.value + " " + creation.class.value + " " + creation.color.value + " " + creation.clothing.value
     }
 
     const isValidKey = (key: string): key is keyof WizardContext => {
