@@ -63,17 +63,17 @@ export const culture: CreationObject[] = [
     {
         id: 'race',
         content: 'eagle',
-        value: 'aarakocra-headed',
+        value: 'eagle-headed',
+    },
+    {
+        id: 'race',
+        content: 'crocodile',
+        value: 'crocodile-headed',
     },
     {
         id: 'race',
         content: 'lizard',
         value: 'lizardfolk-headed',
-    },
-    {
-        id: 'race',
-        content: 'druid',
-        value: 'druid firbolg',
     },
     {
         id: 'race',
@@ -83,27 +83,17 @@ export const culture: CreationObject[] = [
     {
         id: 'race',
         content: 'tabaxi (cat)',
-        value: 'tabaxi',
+        value: 'cat-headed',
     },
     {
         id: 'race',
-        content: 'undead',
-        value: 'undead',
-    },
-    {
-        id: 'race',
-        content: 'Centaur',
-        value: 'centaur',
+        content: 'skeleton',
+        value: 'skeleton',
     },
     {
         id: 'race',
         content: 'Goblin',
         value: 'goblin',
-    },
-    {
-        id: 'race',
-        content: 'Triton',
-        value: 'triton',
     },
     {
         id: 'race',
@@ -117,18 +107,8 @@ export const culture: CreationObject[] = [
     },
     {
         id: 'race',
-        content: 'Merfolk',
-        value: 'merfolk',
-    },
-    {
-        id: 'race',
-        content: 'Kobold',
-        value: 'kobold',
-    },
-    {
-        id: 'race',
         content: 'Kenku (crow)',
-        value: 'kenku-headed',
+        value: 'crow-headed',
     }
 ];
 
@@ -189,7 +169,7 @@ export const clothing: CreationObject[] = [
     },
     {
         id: 'clothing',
-        content: 'deatiled armour',
+        content: 'detailed armour',
         value: 'detailed armour',
     },
     {
@@ -338,16 +318,6 @@ export const classes: CreationObject[] = [
     //     content: 'ranger',
     //     value: 'ranger,',
     // },
-    {
-        id: 'class',
-        content: 'monk',
-        value: 'monk,',
-    },
-    {
-        id: 'class',
-        content: 'alchemist',
-        value: 'alchemist,',
-    },
     // {
     //     id: 'class',
     //     content: 'bard',
@@ -360,16 +330,6 @@ export const classes: CreationObject[] = [
     // },
     {
         id: 'class',
-        content: 'paladin',
-        value: 'paladin,',
-    },
-    {
-        id: 'class',
-        content: 'druid',
-        value: 'druid,',
-    },
-    {
-        id: 'class',
         content: 'necromancer',
         value: 'necromancer,',
     },
@@ -380,23 +340,8 @@ export const classes: CreationObject[] = [
     },
     {
         id: 'class',
-        content: 'swashbuckler',
-        value: 'swashbuckler,',
-    },
-    {
-        id: 'class',
-        content: 'berserker',
-        value: 'berserker,',
-    },
-    {
-        id: 'class',
         content: 'ninja',
         value: 'ninja in black,',
-    },
-    {
-        id: 'class',
-        content: 'elementalist',
-        value: 'elementalist,',
     }
 ];
 
@@ -502,4 +447,4 @@ export const facialExpressions: CreationObject[] = [
         value: 'intrigued expression,',
     },
 ];
-export const objects = [age, culture, sexes, skin, classes, color, clothing]
+export const objects = [age, culture, sexes, classes, color, clothing]
