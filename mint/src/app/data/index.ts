@@ -42,7 +42,7 @@ export const culture: CreationObject[] = [
     },
     {
         id: 'race',
-        content: 'Lion',
+        content: 'Tiger',
         value: 'tiger-headed',
     },
     {
